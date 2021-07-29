@@ -1,0 +1,2 @@
+rootProject.name = "Download Web Content Demo"
+include ':app'
