@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity {
            // read the string given in the param and do the
            // operations
 
+            // converts the string input into the actual URL
             URL url;
-            HttpURLConnection httpURLConnection = null;
+
+            // more like opening a browser
+            HttpURLConnection httpURLConnection;
             String result = "";
 
             // there could be instances where the url string is
@@ -40,15 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
                 // now, to have the url data accessed
                 // create the connection, this is equivalent to opening a
-                // Web Browser.
+                // Web Browser window
 
                 httpURLConnection = (HttpURLConnection) url.openConnection();
 
                 // I will going to enter the url string into the browser window and
-                // let it establish the connection
+                // let it establish the connection, which in turn starts to load the data
                 InputStream inputStream = httpURLConnection.getInputStream();
 
-                // now, I will let the browser read this data contained in the url
+                // now, I will let the browser read the data that has been loaded from InputStream
                 InputStreamReader reader = new InputStreamReader(inputStream);
 
                 // I will read the string
